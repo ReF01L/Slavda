@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LastSlavda.Basket">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="500" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="70" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid IsVisible="False" BackgroundColor="WhiteSmoke" x:Name="ConfirmWindow" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Confirm" HorizontalOptions="Center" FontSize="35" Margin="55" TextColor="Black"/>
+                <StackLayout x:Name="dataList" Orientation="Vertical">
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Margin="50">
+                    <Button Clicked="B_Disagree" FontSize="25" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" Text="Disagree"/>
+                    <Button Clicked="B_Agree" FontSize="25" BackgroundColor="Transparent" HorizontalOptions="End" Text="Agree" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        <Grid IsVisible="False" BackgroundColor="WhiteSmoke" x:Name="FinalWindow" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Successful" HorizontalOptions="Center" FontSize="35" Margin="55" TextColor="Black"/>
+                <StackLayout x:Name="dataListFinal" Orientation="Vertical">
+
+                </StackLayout>
+                <Button Margin="50" Clicked="B_Finish" FontSize="25" VerticalOptions="EndAndExpand" BackgroundColor="Transparent" HorizontalOptions="End" Text="Agree" />
+            </StackLayout>
+        </Grid>
+        <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="MainField">
+        </StackLayout>
+        <Button x:Name="Order" Clicked="OrderList" Text="Order" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" WidthRequest="170" Font="McLaren"/>
+        <Button x:Name="Shop" Padding="0, 0, 0, 15" FontSize="50" Text="+" Clicked="OpenShop" Grid.Row="2" Grid.Column="2" CornerRadius="70" BackgroundColor="DarkCyan"/>
+    </Grid>
+</ContentPage>
